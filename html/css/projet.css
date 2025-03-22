@@ -1,0 +1,54 @@
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 475px;
+    margin: 5px;
+    width: 270px;
+}
+
+.project-card h3{
+    margin-top: 0;
+    margin-bottom: 4px;
+    text-align: center;
+    color: #3d535f;
+}
+
+.picture{
+    height: 170px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.one{
+    background-image: url(../images/VOYAGE.png);
+}
+
+.two{
+    background-image: url(../images/Card.PNG);
+}
+
+.three{
+    background-image: url(../images/Chat.jpg);
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+    transition: all 0.5s ease;
+}
+
+.project-card a:hover{
+    text-decoration: underline;
+}
+
+

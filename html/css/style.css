@@ -1,0 +1,176 @@
+:root{
+    --my-color-gris: #f3f5f8;
+    --my-color-gris-fonce: #3d535f;
+    --my-color-jaune: #ffe800;
+    --my-color-bleu:#7CB9E8;
+    --my-color-bleu:#007FFF;
+}
+*{
+  margin: 0px;
+  padding: 0px;  
+  list-style-type: none;
+  text-decoration: none; 
+  box-sizing: border-box;
+  font-family: 'poppins',sans-serif;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--my-color-gris);
+}
+
+.entete{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 80px;
+    line-height: 80px;
+    z-index: 111;
+}
+
+.logo{
+    display: flex;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--my-color-gris-fonce);
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-left: -175px;
+}
+
+b{
+    font-size: 70px;
+    color: #007FFF;
+}
+
+.logo span{
+    color:#007FFF ;
+}
+
+.menu{
+    display: flex;
+    margin-right: -150px;
+}
+
+.menu li{
+    margin: 0 15px;
+}
+
+.menu li a{
+    font-size: 25px;
+    color: var(--my-color-gris-fonce);
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+.reseaux a{
+    font-size: 30;
+    color: var(--my-color-gris-fonce);
+    margin: 25PX 10px ;
+}
+
+.menu li:hover a, .reseaux a:hover{
+    color: #007FFF;
+}
+
+.corps{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center; 
+    padding: 0 10%;
+    overflow: hidden;     
+}
+
+.Cgauche{
+    width: 50%;
+    left: -50%;
+}
+
+.Cgauche{
+    z-index: 5;
+}
+
+.Cdroite {
+    margin-left: 100px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+
+.textB{
+    position: relative;
+    font-size: 50px;
+    letter-spacing: 1px;
+    color: var(--my-color-gris-fonce);
+}
+
+.textC{
+    color:#007FFF;
+
+}
+
+p{
+    width: 100%;
+    font-size: 1.2em;
+    color: var(--my-color-gris-fonce);
+}
+
+.corps::before{
+    position: absolute;
+    content: '';
+    height: 600px;
+    width: 600px;
+    border-radius:  50%;
+    background: linear-gradient(45deg,#007FFF,white);
+    left: -17%;
+    top:40%;
+    animation: beforeAnime 6s linear infinite;
+}
+
+@keyframes beforeAnime{
+    50%{
+        left:-13%;
+        top:41% ;
+    }
+}
+
+.corps::after {
+    position: absolute;
+    content: '';
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg,#007FFF,white);
+    left: 35%;
+    top: 15%;
+    animation: afterAnime 6s linear infinite;
+}
+
+@keyframes afterAnime{
+    50%{
+        left: 27%;
+        top: 10%;
+        
+    }
+}
+
+.rome{
+    color: var(--my-color-gris-fonce);
+    padding: 20px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+.vidéo{
+    margin-left: 350px;
+    padding-top: 5%;
+}
+
+
+    
