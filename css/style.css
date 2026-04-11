@@ -14,6 +14,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html,
+body{
+    width: 100%;
+}
+
 body{
     line-height: 1.5;
     overflow-x: hidden;
@@ -93,6 +98,7 @@ b{
 }
 
 .corps{
+    position: relative;
     display: flex;
     width: 100%;
     min-height: calc(100vh - 180px);
@@ -248,6 +254,229 @@ h3{
     line-height: 1.6;
 }
 
+.contact{
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(102, 126, 234, 0.1) 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 0.8s ease-out;
+}
+
+@keyframes zoomIn{
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.contact h2{
+    text-align: center;
+    color: #3d535f;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.project-request{
+    margin-top: 0;
+}
+
+form label{
+    font-weight: bold;
+    color: #3d535f;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input,
+form textarea{
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus{
+    border-color: #007FFF;
+    box-shadow: 0 0 10px rgba(0, 127, 255, 0.3);
+    outline: none;
+}
+
+form textarea{
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button{
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #007FFF 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-self: center;
+}
+
+form button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 127, 255, 0.4);
+}
+
+.contact-info{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-info a{
+    display: inline-block;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-info a:hover{
+    transform: scale(1.1);
+}
+
+.contact-info a:focus-visible{
+    outline: 2px solid #007FFF;
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.fa{
+    font-size: 48px;
+    color: #3d535f;
+    transition: color 0.3s ease;
+}
+
+.fa:hover{
+    color: #007FFF;
+}
+
+.projet{
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+.search-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.search-form label{
+    font-weight: bold;
+    color: #667eea;
+}
+
+.search-form input{
+    padding: 10px;
+    border: 1px solid #667eea;
+    border-radius: 4px;
+}
+
+.search-form button{
+    padding: 10px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-form button:hover{
+    background-color: #5a67d8;
+}
+
+.project-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    flex: 0 1 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    margin: 5px;
+    width: 100%;
+    max-width: 320px;
+    min-height: 475px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp{
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card:hover{
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #3d535f;
+}
+
+.project-card p{
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+.project-card img{
+    height: 170px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+}
+
+.project-tech{
+    margin: 16px 0;
+    font-weight: bold;
+    color: #007FFF;
+}
+
+.project-card a{
+    color: #007FFF;
+    font-weight: bold;
+}
+
+.project-card a:hover{
+    text-decoration: underline;
+}
+
 footer{
     width: min(1200px, 100%);
     margin: 0 auto;
@@ -261,7 +490,7 @@ footer p{
     font-size: 0.95rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
     .entete{
         flex-direction: column;
         padding: 16px 20px;
@@ -325,9 +554,51 @@ footer p{
     .about-container{
         grid-template-columns: 1fr;
     }
+
+    .contact{
+        margin-bottom: 40px;
+        padding: 20px 12px;
+    }
+
+    form{
+        padding: 20px;
+    }
+
+    .contact h2{
+        font-size: 2em;
+    }
+
+    .contact-info a{
+        margin: 0 10px;
+    }
+
+    .fa{
+        font-size: 40px;
+    }
+
+    .projet{
+        padding-bottom: 40px;
+    }
+
+    .project-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card{
+        width: 100%;
+        max-width: 440px;
+        min-height: auto;
+        margin: 0;
+    }
+
+    .search-form{
+        max-width: 440px;
+        width: 100%;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px){
     .entete{
         padding: 14px 16px;
     }
@@ -342,22 +613,23 @@ footer p{
     }
 
     .menu{
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
         margin-top: 8px;
     }
 
     .menu li{
-        width: 100%;
-        max-width: 240px;
+        width: calc(50% - 8px);
+        max-width: 160px;
     }
 
     .menu li a{
-        font-size: 1rem;
+        font-size: 0.95rem;
         width: 100%;
         text-align: center;
-        padding: 10px 14px;
+        padding: 10px 12px;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.12);
     }
@@ -403,5 +675,112 @@ footer p{
 
     footer p{
         font-size: 0.85rem;
+    }
+
+    .contact{
+        margin-bottom: 28px;
+        padding: 16px 0;
+        border-radius: 12px;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .contact h2{
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    form{
+        gap: 14px;
+        padding: 16px;
+        margin-bottom: 24px;
+        border-radius: 12px;
+    }
+
+    form input,
+    form textarea,
+    form button{
+        width: 100%;
+    }
+
+    form button{
+        font-size: 1rem;
+        padding: 14px 18px;
+    }
+
+    .contact-info{
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .contact-info a{
+        margin: 0;
+    }
+
+    .fa{
+        font-size: 34px;
+    }
+
+    .projet{
+        padding-top: 0;
+        padding-bottom: 32px;
+    }
+
+    .search-form{
+        max-width: 100%;
+        padding: 16px;
+        margin: 12px auto 18px;
+        border-radius: 12px;
+    }
+
+    .search-form input,
+    .search-form button{
+        width: 100%;
+    }
+
+    .project-container{
+        gap: 16px;
+    }
+
+    .project-card{
+        width: 100%;
+        padding: 16px;
+        border-radius: 12px;
+        max-width: none;
+    }
+
+    .project-card img{
+        height: 150px;
+    }
+
+    .project-card h3{
+        font-size: 1.15rem;
+    }
+
+    .project-tech{
+        margin: 12px 0;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 360px){
+    .menu li{
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .textB{
+        font-size: 22px;
+    }
+
+    .contact h2,
+    .about h2{
+        font-size: 1.5rem;
+    }
+
+    .project-card img{
+        height: 135px;
     }
 }
