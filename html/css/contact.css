@@ -136,3 +136,47 @@ form button:hover {
         font-size: 40px;
     }
 }
+
+@media (max-width: 480px) {
+    .contact {
+        padding: 16px 8px;
+        border-radius: 12px;
+    }
+
+    .contact h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    form {
+        gap: 14px;
+        padding: 16px;
+        margin-bottom: 24px;
+    }
+
+    form input,
+    form textarea,
+    form button {
+        width: 100%;
+    }
+
+    form button {
+        font-size: 1rem;
+        padding: 14px 18px;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .contact-info a {
+        margin: 0;
+    }
+
+    .fa {
+        font-size: 34px;
+    }
+}

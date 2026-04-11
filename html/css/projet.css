@@ -125,3 +125,44 @@
         max-width: 90%;
     }
 }
+
+@media (max-width: 480px) {
+    .projet {
+        padding-top: 0;
+        padding-bottom: 32px;
+    }
+
+    .search-form {
+        max-width: 100%;
+        padding: 16px;
+        margin: 12px auto 18px;
+    }
+
+    .search-form input,
+    .search-form button {
+        width: 100%;
+    }
+
+    .project-container {
+        gap: 16px;
+    }
+
+    .project-card {
+        width: 100%;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .project-card img {
+        height: 150px;
+    }
+
+    .project-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .project-tech {
+        margin: 12px 0;
+        font-size: 0.95rem;
+    }
+}

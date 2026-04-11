@@ -16,6 +16,7 @@
 
 body{
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 a{
@@ -82,6 +83,8 @@ b{
     font-weight: 500;
     color: white;
     letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 0;
 }
 
 .menu li a:hover,
@@ -276,6 +279,7 @@ footer p{
         flex-wrap: wrap;
         justify-content: center;
         gap: 12px 20px;
+        width: 100%;
     }
 
     .corps{
@@ -328,15 +332,76 @@ footer p{
         padding: 14px 16px;
     }
 
+    .logo{
+        font-size: 26px;
+        letter-spacing: 2px;
+    }
+
+    b{
+        font-size: 42px;
+    }
+
+    .menu{
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .menu li{
+        width: 100%;
+        max-width: 240px;
+    }
+
     .menu li a{
-        font-size: 18px;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
     }
 
     .textB{
         font-size: 25px;
     }
 
+    .eyebrow{
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+    }
+
+    .corps{
+        gap: 24px;
+        padding: 20px 0 32px;
+    }
+
+    .Cdroite img{
+        max-width: 220px;
+    }
+
+    .about h2{
+        font-size: 1.75rem;
+        margin-bottom: 24px;
+    }
+
+    .about-card{
+        padding: 16px;
+    }
+
+    .about-card h3{
+        font-size: 1.2rem;
+    }
+
     main{
         padding: 0 16px;
+    }
+
+    footer{
+        padding: 0 16px 20px;
+    }
+
+    footer p{
+        font-size: 0.85rem;
     }
 }
