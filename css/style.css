@@ -608,6 +608,8 @@ footer p{
 
 @media (max-width: 480px){
     .entete{
+        align-items: center;
+        gap: 12px;
         padding: 14px 16px;
     }
 
@@ -615,22 +617,21 @@ footer p{
         width: 100%;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
+        gap: 8px 16px;
         margin-top: 8px;
     }
 
     .menu li{
-        width: calc(50% - 8px);
-        max-width: 160px;
+        width: auto;
+        max-width: none;
     }
 
     .menu li a{
         font-size: 0.95rem;
-        width: 100%;
+        width: auto;
         text-align: center;
-        padding: 10px 12px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.12);
+        padding: 6px 0;
+        background: transparent;
     }
 
     .eyebrow{
@@ -759,8 +760,8 @@ footer p{
 
 @media (max-width: 360px){
     .menu li{
-        width: 100%;
-        max-width: 220px;
+        width: auto;
+        max-width: none;
     }
 
     .contact h2,
