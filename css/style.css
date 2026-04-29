@@ -24,6 +24,10 @@ body{
     overflow-x: hidden;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 a{
     text-decoration: none;
 }
@@ -31,6 +35,19 @@ a{
 img{
     display: block;
     max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+label,
+input,
+textarea,
+button{
+    overflow-wrap: break-word;
 }
 
 .container{
@@ -45,7 +62,7 @@ main{
     flex: 1;
     width: min(1200px, 100%);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 4vw, 28px);
 }
 
 .entete{
@@ -55,21 +72,23 @@ main{
     justify-content: space-between;
     align-items: center;
     min-height: 80px;
-    padding: 20px;
+    gap: 24px;
+    padding: 20px clamp(16px, 4vw, 28px);
 }
 
 .logo{
     display: inline-flex;
     align-items: center;
-    font-size: 40px;
+    flex-shrink: 0;
+    font-size: clamp(28px, 5vw, 40px);
     font-weight: 800;
     color: white;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 b{
-    font-size: 70px;
+    font-size: clamp(44px, 8vw, 70px);
     color: var(--my-color-accent);
 }
 
@@ -80,11 +99,13 @@ b{
 .menu{
     display: flex;
     list-style: none;
-    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px 24px;
 }
 
 .menu li a{
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     font-weight: 500;
     color: white;
     letter-spacing: 1px;
@@ -99,13 +120,13 @@ b{
 
 .corps{
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
     width: 100%;
     min-height: calc(100vh - 180px);
-    justify-content: center;
     align-items: center;
-    gap: 40px;
-    padding: 40px 20px 60px;
+    gap: clamp(28px, 5vw, 56px);
+    padding: 40px 0 60px;
     overflow: hidden;
     animation: fadeIn 1s ease-in;
 }
@@ -116,18 +137,21 @@ b{
 }
 
 .Cgauche{
-    width: 50%;
+    width: 100%;
+    min-width: 0;
     z-index: 5;
 }
 
 .Cdroite{
     display: flex;
     justify-content: center;
+    min-width: 0;
     border-radius: 10px;
+    z-index: 4;
 }
 
 .Cdroite img{
-    max-width: 360px;
+    width: min(100%, 360px);
 }
 
 .eyebrow{
@@ -141,9 +165,11 @@ b{
 
 .textB{
     position: relative;
-    font-size: 50px;
+    display: inline-block;
+    font-size: clamp(2rem, 5vw, 3.125rem);
     letter-spacing: 1px;
     color: var(--my-color-gris-fonce);
+    line-height: 1.15;
 }
 
 .textC{
@@ -152,7 +178,7 @@ b{
 
 p{
     width: 100%;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     color: var(--my-color-gris-fonce);
     margin-top: 18px;
 }
@@ -205,14 +231,14 @@ h3{
 }
 
 .about h2{
-    font-size: 2.5em;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     color: var(--my-color-gris-fonce);
-    margin-bottom: 40px;
+    margin-bottom: clamp(24px, 5vw, 40px);
 }
 
 .about-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -257,7 +283,7 @@ h3{
 .contact{
     max-width: 800px;
     margin: 0 auto 60px;
-    padding: 40px 20px;
+    padding: clamp(18px, 4vw, 40px) clamp(12px, 3vw, 20px);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(102, 126, 234, 0.1) 100%);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -272,16 +298,16 @@ h3{
 .contact h2{
     text-align: center;
     color: #3d535f;
-    font-size: 2.5em;
-    margin-bottom: 30px;
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+    margin-bottom: clamp(20px, 4vw, 30px);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 form{
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 30px;
+    gap: clamp(14px, 3vw, 20px);
+    padding: clamp(16px, 4vw, 30px);
     background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -301,6 +327,7 @@ form label{
 
 form input,
 form textarea{
+    width: 100%;
     padding: 15px;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
@@ -341,11 +368,15 @@ form button:hover{
 .contact-info{
     text-align: center;
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px 28px;
 }
 
 .contact-info a{
     display: inline-block;
-    margin: 0 20px;
+    margin: 0;
     transition: transform 0.3s ease;
 }
 
@@ -381,7 +412,7 @@ form button:hover{
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    max-width: 400px;
+    width: min(100%, 440px);
     margin: 20px auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -411,22 +442,19 @@ form button:hover{
 }
 
 .project-container{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 20px;
-    justify-content: center;
+    align-items: stretch;
 }
 
 .project-card{
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 15px;
-    flex: 0 1 320px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: auto;
-    margin: 5px;
     width: 100%;
-    max-width: 320px;
     min-height: 475px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.6s ease-out;
@@ -480,7 +508,7 @@ form button:hover{
 footer{
     width: min(1200px, 100%);
     margin: 0 auto;
-    padding: 0 20px 24px;
+    padding: 0 clamp(16px, 4vw, 28px) 24px;
 }
 
 footer p{
@@ -490,29 +518,20 @@ footer p{
     font-size: 0.95rem;
 }
 
-@media (max-width: 768px){
+@media (max-width: 900px){
     .entete{
         flex-direction: column;
-        padding: 16px 20px;
-    }
-
-    .logo{
-        font-size: 30px;
-    }
-
-    b{
-        font-size: 50px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
 
     .menu{
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 12px 20px;
         width: 100%;
     }
 
     .corps{
-        flex-direction: column;
+        grid-template-columns: 1fr;
         min-height: auto;
         padding: 30px 0 40px;
     }
@@ -527,11 +546,7 @@ footer p{
     }
 
     .Cdroite img{
-        max-width: 300px;
-    }
-
-    .textB{
-        font-size: 30px;
+        width: min(72vw, 300px);
     }
 
     p{
@@ -579,21 +594,14 @@ footer p{
     .projet{
         padding-bottom: 40px;
     }
-
-    .project-container{
-        flex-direction: column;
-        align-items: center;
-    }
-
     .project-card{
         width: 100%;
         max-width: 440px;
         min-height: auto;
-        margin: 0;
+        justify-self: center;
     }
 
     .search-form{
-        max-width: 440px;
         width: 100%;
     }
 }
@@ -601,15 +609,6 @@ footer p{
 @media (max-width: 480px){
     .entete{
         padding: 14px 16px;
-    }
-
-    .logo{
-        font-size: 26px;
-        letter-spacing: 2px;
-    }
-
-    b{
-        font-size: 42px;
     }
 
     .menu{
@@ -634,10 +633,6 @@ footer p{
         background: rgba(255, 255, 255, 0.12);
     }
 
-    .textB{
-        font-size: 25px;
-    }
-
     .eyebrow{
         font-size: 0.8rem;
         letter-spacing: 1.5px;
@@ -649,7 +644,7 @@ footer p{
     }
 
     .Cdroite img{
-        max-width: 220px;
+        width: min(70vw, 220px);
     }
 
     .about h2{
@@ -709,10 +704,7 @@ footer p{
     }
 
     .contact-info{
-        display: flex;
-        justify-content: center;
         gap: 14px;
-        flex-wrap: wrap;
     }
 
     .contact-info a{
@@ -769,10 +761,6 @@ footer p{
     .menu li{
         width: 100%;
         max-width: 220px;
-    }
-
-    .textB{
-        font-size: 22px;
     }
 
     .contact h2,
