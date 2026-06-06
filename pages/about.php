@@ -1,5 +1,15 @@
+<?php
+session_start();
+require_once '../config/connexion.php';
+require_once '../fonctions.php';
+
+// Enregistrer la visite
+enregistrerVisite($pdo, basename($_SERVER['PHP_SELF']));
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +17,9 @@
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="container">
-    <header>
-        <nav class="entete">
-            <a class="logo" href="../index.html" aria-label="Retour à l'accueil"><span>Ro</span>ma<b>.</b></a>
-            <ul class="menu">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="./about.html">À propos</a></li>
-                <li><a href="./projets.html">Projets</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include '../composants/navigation.php'; ?>
 
     <main>
         <section class="about">
@@ -67,8 +68,7 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Romaric Dossou. Tous droits réservés.</p>
-    </footer>
+    <?php include '../composants/pied-de-page.php'; ?>
 </body>
+
 </html>
